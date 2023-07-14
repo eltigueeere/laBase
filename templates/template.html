@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>La Base</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .miNavbar{
+      background-color: #FFD700;
+      color: #1F2532;
+    }
+    body {
+      background-color: #1F2532;
+      color: #F2F2F2;
+    }
+
+    .mi_contenerdor {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer{
+      position: relative;
+      top: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg miNavbar">
+    <a class="navbar-brand" href="#">La Base</a>
+    <button style="background-color: rgb(192, 190, 190); " class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span style="color: white; border-color: white;" class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Otra página</a>
+        </li>
+        <!-- Agrega más elementos de menú aquí -->
+      </ul>
+    </div>
+  </nav>
+  <div class="mi_contenerdor">
+    {% block content %}{% endblock %}
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="copy">© 2023 LaBase CDMX</div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<style>
+  .centro{
+  flex-grow: 1;
+  width: 100%;
+  }
+  .login {
+    float: left;
+  }
+  
+  .crear {
+    float: right;
+    text-align: right;
+  }
+  
+</style>
+
+{% extends "template.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 centro">
+      {% if error_message %}
+        <div class="alert alert-danger">{{ error_message }}</div> <!-- Agrega la clase 'alert-danger' para mostrar el mensaje en rojo -->
+      {% endif %}
+        <h3 class="login">Login</h3>
+        <a href="{{ url_for('login_routes.crear_cuenta') }}" class="badge badge-success crear">Crear cuenta</a>
+      <br><br>
+      <form method="POST" action="{{ url_for('login_routes.login') }}">
+        <div class="form-group">
+          <label for="correo">Correo:</label>
+          <input type="correo" class="form-control" id="correo" name="correo" required placeholder="Insertar correo">
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña:</label>
+          <input type="password" class="form-control" id="password" name="password" required placeholder="Insertar contraseña">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
